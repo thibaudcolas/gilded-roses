@@ -31,6 +31,20 @@ describe("Gilded Rose", function() {
 
       expect(foo).toEqual(1);
     });
+
+    it("The 'toBeLessThan' matcher is for mathematical comparisons", function() {
+      var pi = 3, e = 2;
+
+      expect(e).toBeLessThan(pi);
+      expect(pi).not.toBeLessThan(e);
+    });
+
+    it("The 'toBeGreaterThan' is for mathematical comparisons", function() {
+      var pi = 3, e = 2;
+
+      expect(pi).toBeGreaterThan(e);
+      expect(e).not.toBeGreaterThan(pi);
+    });
   });
 
 });
