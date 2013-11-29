@@ -21,6 +21,6 @@ Nous avons récemment signé avec un distributeur d'objets magiques. Cela néces
 
 - Les objets Magiques (_Conjured_) se dégradent en Qualité deux fois plus vite que les objets normaux.
 
-Feel free to make any changes to the UpdateQuality method and add any new code as long as everything still works correctly. However, do not alter the Item class or Items property as those belong to the goblin in the corner who will insta-rage and one-shot you as he doesn't believe in shared code ownership (you can make the UpdateQuality method and Items property static if you like, we'll cover for you). 
+Libre à vous de changer la méthode UpdateQuality et d'ajouter du code tant que tout fonctionne toujours correctement. En revanche, ne touchez pas à la classe Item ou à ses propriétés car elles appartiennent au goblin du coin qui va s'énerver et vous buter car il n'accepte pas qu'on touche à son code.
 
-Just for clarification, an item can never have its Quality increase above 50, however "Sulfuras" is a legendary item and as such its Quality is 80 and it never alters.
+Pour clarifier, un article ne peut jamais avoir sa qualité dépasser 50, mais Sulfurox est un objet légendaire et a donc une Qualité de 80 qui ne change jamais.
