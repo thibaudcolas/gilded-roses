@@ -8,14 +8,14 @@ Salut, bienvenue chez Gilded Rose. Nous sommes une petite auberge idéalement si
 - Tous les articles ont une note de Qualité (_Quality_) signifiant leur valeur.
 - En fin de journée, les deux valeurs sont diminuées pour chaque article.
 
-Pretty simple, right? Well this is where it gets interesting:
+Plutôt simple, non ? C'est maintenant que cela devient intéressant :
 
-    - Once the sell by date has passed, Quality degrades twice as fast
-    - The Quality of an item is never negative
-    - "Aged Brie" actually increases in Quality the older it gets
-    - The Quality of an item is never more than 50
-    - "Sulfuras", being a legendary item, never has to be sold or decreases in Quality
-    - "Backstage passes", like aged brie, increases in Quality as it's SellIn value approaches; Quality increases by 2 when there are 10 days or less and by 3 when there are 5 days or less but Quality drops to 0 after the concert
+- Une fois la date de vente dépassée, la Qualité diminue deux fois plus vite.
+- La Qualité d'un objet n'est jamais négative.
+- Le Vieux Brie (_Aged Brie_) augmente en Qualité au fil du temps.
+- La Qualité d'un objet n'est jamais plus grande que 50.
+- Sulfurox (_Sulfuras_), un objet légendaire, n'est pas en vente et ne diminue pas de Qualité
+- L'Accès aux coulisses (_Backstage passes_), comme le vieux brie, augmente en Qualité quand sa date de vente approche. La Qualité augmente de 2 quand il reste 10 jours ou moins et de 3 quand il reste cinq jours ou moins, mais passe à 0 après le concert.
 
 We have recently signed a supplier of conjured items. This requires an update to our system:
 
