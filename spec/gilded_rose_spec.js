@@ -4,4 +4,8 @@ describe("Gilded Rose", function() {
 
   });
 
+  it("is a syntax example", function() {
+     expect(true).toBe(true);
+  });
+
 });
