@@ -17,9 +17,9 @@ Plutôt simple, non ? C'est maintenant que cela devient intéressant :
 - Sulfurox (_Sulfuras_), un objet légendaire, n'est pas en vente et ne diminue pas de Qualité
 - L'Accès aux coulisses (_Backstage passes_), comme le vieux brie, augmente en Qualité quand sa date de vente approche. La Qualité augmente de 2 quand il reste 10 jours ou moins et de 3 quand il reste cinq jours ou moins, mais passe à 0 après le concert.
 
-We have recently signed a supplier of conjured items. This requires an update to our system:
+Nous avons récemment signé avec un distributeur d'objets magiques. Cela nécessite une mise à jour de notre système :
 
-    - "Conjured" items degrade in Quality twice as fast as normal items
+- Les objets Magiques (_Conjured_) se dégradent en Qualité deux fois plus vite que les objets normaux.
 
 Feel free to make any changes to the UpdateQuality method and add any new code as long as everything still works correctly. However, do not alter the Item class or Items property as those belong to the goblin in the corner who will insta-rage and one-shot you as he doesn't believe in shared code ownership (you can make the UpdateQuality method and Items property static if you like, we'll cover for you). 
 
