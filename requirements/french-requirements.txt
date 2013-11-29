@@ -4,9 +4,9 @@ Spécifications fonctionnelles de Gilded Rose
 
 Salut, bienvenue chez Gilded Rose. Nous sommes une petite auberge idéalement située dans une ville importante et gérée par une aubergiste appelée Allison. Nous achetons et vendons également de la marchandise de premier ordre. Malheureusement, nos articles se dégradent constamment en qualité alors qu'ils approchent leur date de péremption. Nous avons un système en place qui met à jour l'inventaire. Il a été développé par un individu pragmatique nommé Leeroy, qui est parti vers d'autres aventures. Votre tâche est d'ajouter une nouvelle fonctionnalité à ce système pour que nous puissions commencer à vendre une nouvelle catégorie d'objets. Commençons par une introduction à notre système :
 
-    - All items have a SellIn value which denotes the number of days we have to sell the item
-    - All items have a Quality value which denotes how valuable the item is
-    - At the end of each day our system lowers both values for every item
+- Tous les articles ont une Date de vente limite (_SellIn_) qui représente le nombre de jours que nous avons pour vendre l'objet.
+- Tous les articles ont une note de Qualité (_Quality_) signifiant leur valeur.
+- En fin de journée, les deux valeurs sont diminuées pour chaque article.
 
 Pretty simple, right? Well this is where it gets interesting:
 
