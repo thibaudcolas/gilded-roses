@@ -22,4 +22,15 @@ describe("Gilded Rose", function() {
     expect(false).not.toBe(true);
   });
 
+
+
+  describe("Another spec", function() {
+    it("is just a function, so it can contain any code", function() {
+      var foo = 0;
+      foo += 1;
+
+      expect(foo).toEqual(1);
+    });
+  });
+
 });
