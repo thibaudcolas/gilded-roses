@@ -1,4 +1,4 @@
 gilded-roses
 ============
 
-  Starting and ending code for the GildedRose Refactoring Kata in JavaScript w/ Jasmine and Istanbul
+> A refactoring kata, originally from [Emily Bache](https://github.com/emilybache/Refactoring-Katas).
