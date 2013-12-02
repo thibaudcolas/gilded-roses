@@ -25,6 +25,8 @@
     "url": "https://github.com/ThibWeb/gilded-roses/issues"
   },
   "devDependencies": {
-    "grunt": "~0.4.2"
+    "grunt": "~0.4.2",
+    "grunt-contrib-jasmine": "~0.5.2",
+    "grunt-template-jasmine-istanbul": "~0.2.5"
   }
 }
