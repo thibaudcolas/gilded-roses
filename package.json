@@ -1,0 +1,30 @@
+{
+  "name": "gilded-roses",
+  "version": "0.0.0",
+  "description": "A refactoring kata in JS",
+  "main": "SpecRunner.html",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ThibWeb/gilded-roses.git"
+  },
+  "keywords": [
+    "codingdojo",
+    "kata",
+    "refactoring",
+    "javascript",
+    "jasmine",
+    "istanbul",
+    "tdd"
+  ],
+  "author": "ThibWeb",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/ThibWeb/gilded-roses/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2"
+  }
+}
