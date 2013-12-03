@@ -5,7 +5,7 @@ module.exports = function(config) {
     frameworks: ['jasmine'],
     files: [
       'src/gilded_rose.js',
-      'spec/gilded_rose_spec.js'
+      'spec/gilded_rose_coverage.js'
     ],
     browsers: ['PhantomJS'],
 
