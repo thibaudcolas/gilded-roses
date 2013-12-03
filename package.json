@@ -4,7 +4,7 @@
   "description": "A refactoring kata in JS",
   "main": "SpecRunner.html",
   "scripts": {
-    "test": "node_modules/.bin/karma start coverage.js"
+    "test": "node_modules/.bin/karma start karma.js"
   },
   "repository": {
     "type": "git",
