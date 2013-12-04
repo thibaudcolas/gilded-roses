@@ -3,7 +3,7 @@ gilded-roses
 
 > A refactoring kata, originally from [Emily Bache](https://github.com/emilybache/Refactoring-Katas).
 
-![Build Status](https://travis-ci.org/ThibWeb/gilded-roses.png?branch=master)](https://travis-ci.org/ThibWeb/gilded-roses)
+[![Build Status](https://travis-ci.org/ThibWeb/gilded-roses.png?branch=master)](https://travis-ci.org/ThibWeb/gilded-roses)
 
 [![Code Climate](https://codeclimate.com/github/ThibWeb/gilded-roses.png)](https://codeclimate.com/github/ThibWeb/gilded-roses)
 
