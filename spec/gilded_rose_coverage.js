@@ -18,9 +18,9 @@ describe("Gilded Rose", function() {
     expect(items instanceof Array).toBe(true);
   });
 
-  // it("is a syntax example", function() {
-  //   expect(true).toBe(true);
-  // });
+  it("is a syntax example", function() {
+    expect(true).toBe(false);
+  });
 
   // it("can have a negative case", function() {
   //   expect(false).not.toBe(true);
