@@ -3,8 +3,11 @@ gilded-roses
 
 > A refactoring kata, originally from [Emily Bache](https://github.com/emilybache/Refactoring-Katas).
 
-Uses the [Jasmine](http://pivotal.github.io/jasmine/) test framework.
+![Build Status](https://travis-ci.org/ThibWeb/gilded-roses.png?branch=master)](https://travis-ci.org/ThibWeb/gilded-roses)
 
+[![Code Climate](https://codeclimate.com/github/ThibWeb/gilded-roses.png)](https://codeclimate.com/github/ThibWeb/gilded-roses)
+
+Uses the [Jasmine](http://pivotal.github.io/jasmine/) test framework.
 
 ## Call to arms
 
@@ -25,6 +28,22 @@ Uses the [Jasmine](http://pivotal.github.io/jasmine/) test framework.
 > Si vous êtes intéressés faites-moi signe et nous organiserons ça entre midi et deux en décembre, selon les disponibilités de chacun.
 
 > C'est la dernière fois que je détourne la liste FlipFlop de sa fonction première, aussi si vous êtes intéressés par ce genre d'évènement (user groups, workshops, conférences, hackathons, etc) à l'avenir n'hésitez pas à répondre à ce mail afin que nous puissions créer une autre mailing list dédiée à ce genre d'infos (ou au moins que j'arrête de spammer ceux qui s'en tapent). N'hésitez pas non plus à transférer ce message à ceux qui ne sont pas sur la liste mais qui pourraient être partants.
+
+> Godspeed,
+
+> Thibaud.
+
+> Hey,
+
+> c'est chouette, on commence à être assez nombreux !
+
+> J'ai créé un Doodle afin que nous puissions arrêter une date : http://doodle.com/7m3k7u34hav8kwn7. Il y a quatre options, qui collent approximativement avec les disponibilités que l'on m'a déjà communiqué. Merci de prendre deux minutes pour aller y indiquer vos préférences.
+
+> Si nous ne pouvons pas tous être dispo le même jour, nous choisirons ce qui arrange le plus grand nombre. D'autres éditions seront peut-être organisées selon le succès de cette première tentative !
+
+> Rentrons maintenant dans le vif du sujet : comme entraînement, je vous propose de réaliser un refactoring de code JavaScript en mode TDD (Test-Driven Development).
+
+> J'ai fait ce choix parce que nous sommes tous familiers avec la problématique du refactoring et avec JavaScript, et parce que nous avons tous en tête l'intérêt des tests unitaires sans vraiment avoir le temps d'en écrire de manière systématique, encore moins en TDD. C'est l'occasion.
 
 > Godspeed,
 
