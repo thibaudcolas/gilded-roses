@@ -9,6 +9,16 @@ gilded-roses
 
 Uses the [Jasmine](http://pivotal.github.io/jasmine/) test framework.
 
+## Setup
+ 
+```
+    git clone https://github.com/ThibWeb/gilded-roses.git
+    npm install -g livereloadx
+    server
+    livereloadx .
+    echo "http://localhost:1337/SpecRunner.html"
+```
+
 ## Call to arms
 
 > Hey there,
