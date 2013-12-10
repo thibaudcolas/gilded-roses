@@ -58,3 +58,11 @@ Uses the [Jasmine](http://pivotal.github.io/jasmine/) test framework.
 > Godspeed,
 
 > Thibaud.
+
+> Hey, 
+
+> nous avons (presque) tous répondu, il est donc temps d'arrêter la date : ça sera lundi prochain, de 12h30 à 14h00 ! À 5/6, il nous faudra au moins une bonne heure. J'aimerais donc que nous nous organisions pour manger ensemble avant (ou pendant).
+
+> See you next monday !
+
+> Thibaud.
