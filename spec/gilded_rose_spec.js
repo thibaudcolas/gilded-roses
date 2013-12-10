@@ -15,13 +15,10 @@ describe("Gilded Rose", function() {
 
   // it("is a syntax example", function() {
   //   expect(true).toBe(true);
-  // });
-
-  // it("can have a negative case", function() {
   //   expect(false).not.toBe(true);
   // });
 
-  // describe("Another spec", function() {
+  // describe("Nested specs", function() {
   //   it("is just a function, so it can contain any code", function() {
   //     var foo = 0;
   //     foo += 1;
