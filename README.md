@@ -1,7 +1,7 @@
 gilded-roses
 ============
 
-> A refactoring kata, originally from [Emily Bache](https://github.com/emilybache/Refactoring-Katas).
+> A refactoring kata, originally from [Emily Bache](https://github.com/emilybache/Refactoring-Katas), to execute during a [Coding Dojo](http://codingdojo.org/).
 
 [![Build Status](https://travis-ci.org/ThibWeb/gilded-roses.png?branch=master)](https://travis-ci.org/ThibWeb/gilded-roses)
 
