@@ -49,3 +49,22 @@
 > See you next monday !
 
 > Thibaud.
+
+# Debrief
+
+> Hey,
+ 
+> J’espère que ça vous a plu, ou au moins que vous n’avez pas perdu votre temps.
+ 
+> Si vous souhaitez poursuivre l’exercice, voici :
+> -          La version originale du kata, avec plein d’autres langages pour ceux qui voudraient jeter un œil : https://github.com/emilybache/GildedRose-Refactoring-Kata
+> -          Ma version : https://github.com/ThibWeb/gilded-roses. Le code est identique à l’original, j’y ai simplement ajouté ma solution (WIP), la version française des specs, des informations pour la mise en place de l’exercice et des outils d’infrastructure dont nous n’avons pas eu le temps de parler. Sont également présentes sur d’autres branches les solutions que j’ai trouvé en ligne.
+ 
+> Ce soir, j’ajouterai notre code de ce midi sur le dépôt afin que vous puissiez en repartir si le cœur vous en dit.
+ 
+ 
+> Voici enfin le site officiel du concept Coding Dojo : http://codingdojo.org/.
+ 
+> Merci à tous pour votre présence et vos remarques. Si cela vous dit nous pourrons retenter l’expérience !
+ 
+> Thibaud.
