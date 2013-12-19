@@ -5,6 +5,13 @@ describe("Gilded Rose", function() {
       expect(typeof Item).toBe('function');
     });
 
+    it("gives three properties to each item", function() {
+      var testItem = new Item('name', 10, 10);
+      expect(testItem.name).toBe('name');
+      expect(testItem.sell_in).toBe(10);
+      expect(testItem.quality).toBe(10);
+    });
+
     it("has an update function", function() {
       expect(typeof update_quality).toBe('function');
     });
