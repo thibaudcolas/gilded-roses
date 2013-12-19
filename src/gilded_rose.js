@@ -56,16 +56,17 @@ function update_item(item) {
 
   item.sell_in--;
 
-  if (item.name === rule.type.Aging || item.name === rule.type.Event) {
+  if (item.name === rule.type.Aging) {
+    modify_quality(item, 1);
+  }
+  else if (item.name === rule.type.Event) {
     if (item.quality < rule.quality.max) {
       item.quality++;
-      if (item.name == rule.type.Event) {
-        if (item.sell_in < rule.sell_in.close) {
-          modify_quality(item, 1);
-        }
-        if (item.sell_in < rule.sell_in.closer) {
-          modify_quality(item, 1);
-        }
+      if (item.sell_in < rule.sell_in.close) {
+        modify_quality(item, 1);
+      }
+      if (item.sell_in < rule.sell_in.closer) {
+        modify_quality(item, 1);
       }
     }
   }
