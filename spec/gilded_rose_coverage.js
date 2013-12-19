@@ -57,6 +57,32 @@ describe("Gilded Rose", function() {
       }
     });
 
+    it("lowers sell_in value each day", function () {
+      var sell_in = items[0].sell_in;
+      update_quality();
+      expect(items[0].sell_in).toBeLessThan(sell_in);
+    });
+
+    it("lowers quality value each day", function () {
+      var quality = items[0].quality;
+      update_quality();
+      expect(items[0].quality).toBeLessThan(quality);
+    });
+
+    it("can have a smaller sell_in than 0", function () {
+      for (var i = 0; i < items[0].sell_in + 10; i++) {
+        update_quality();
+      }
+      expect(items[0].sell_in).toBeLessThan(0);
+    });
+
+    it("cannot have a smaller quality than 0", function () {
+      for (var i = 0; i < items[0].quality + 10; i++) {
+        update_quality();
+      }
+      expect(items[0].quality).toEqual(0);
+    });
+
   });
 
 });
