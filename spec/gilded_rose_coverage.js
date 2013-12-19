@@ -172,8 +172,9 @@ describe("Gilded Rose", function() {
     // - "Backstage passes", like aged brie, increases in Quality as it's SellIn value approaches;
     it("increases quality for Backstage passes", function () {
       var quality = 0;
+
       expect(items[4].name).toMatch('^Backstage*');
-      console.dir(items[4]);
+
       for (var i = 0; i < 3; i++) {
         quality = items[4].quality;
         update_quality();
@@ -181,7 +182,26 @@ describe("Gilded Rose", function() {
       }
     });
 
-    //  Quality increases by 2 when there are 10 days or less and by 3 when there are 5 days or less but Quality drops to 0 after the concert
+    // Quality increases by 2 when there are 10 days or less
+    it("increases faster (by 2) when the concert approaches", function () {
+      var quality = 0;
+
+      expect(items[4].name).toMatch('^Backstage*');
+
+      for (var i = 0; i < 5; i++) {
+        update_quality();
+      }
+
+      for (var i = 0; i < 5; i++) {
+        quality = items[4].quality;
+        update_quality();
+        expect(items[4].quality).toEqual(quality + 2);
+      }
+
+    });
+
+
+    // and by 3 when there are 5 days or less but Quality drops to 0 after the concert
   });
 
 });
