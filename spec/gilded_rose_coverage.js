@@ -229,6 +229,16 @@ describe("Gilded Rose", function() {
 
       expect(items[4].quality).toEqual(0);
     });
+
+    // - "Conjured" items degrade in Quality twice as fast as normal items
+    it("degrades twice as fast if conjured", function () {
+      var quality = items[5].quality;
+
+      expect(items[5].name).toMatch('^Conjured*');
+
+      update_quality();
+      expect(items[5].quality).toEqual(quality - 2);
+    });
   });
 
 });

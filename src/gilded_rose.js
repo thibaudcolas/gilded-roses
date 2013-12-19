@@ -23,7 +23,8 @@ var rule = {
   type: {
     Aging: 'Aged Brie',
     Legendary: 'Sulfuras, Hand of Ragnaros',
-    Event: 'Backstage passes to a TAFKAL80ETC concert'
+    Event: 'Backstage passes to a TAFKAL80ETC concert',
+    Conjured: 'Conjured Mana Cake'
   },
   quality: {
     max: 50,
@@ -62,6 +63,12 @@ function update_item(item) {
     case rule.type.Aging:
       // Aged Brie gains quality over time.
       modify_quality(item, 1);
+      break;
+
+    case rule.type.Conjured:
+      // Conjured items degrade twice as fast.
+      modify_quality(item, -1);
+      modify_quality(item, -1);
       break;
 
     case rule.type.Event:
