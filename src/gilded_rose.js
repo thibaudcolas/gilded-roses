@@ -38,9 +38,11 @@ var rule = {
 
 /*
  * Updates the quality of item with val, and checks for min and max values when doing so.
+ * rule.quality.min <= item.quality + val <= rule.quality.max
  */
 function modify_quality(item, val) {
-  // rule.quality.min <= item.quality + val <= rule.quality.max
+  // the modifying value is doubled if we missed the sell_in date.
+  val *= (item.sell_in < rule.sell_in.over) ? 2 : 1;
   item.quality = Math.max(Math.min(item.quality + val, rule.quality.max), rule.quality.min);
 }
 
@@ -60,31 +62,15 @@ function update_item(item) {
     modify_quality(item, 1);
   }
   else if (item.name === rule.type.Event) {
-    if (item.quality < rule.quality.max) {
-      item.quality++;
-      if (item.sell_in < rule.sell_in.close) {
-        modify_quality(item, 1);
-      }
-      if (item.sell_in < rule.sell_in.closer) {
-        modify_quality(item, 1);
-      }
+    // Executes the same operation multiple times if sell_in is close / closer.
+    modify_quality(item, 1);
+    modify_quality(item, (item.sell_in < rule.sell_in.close) ? 1 : 0);
+    modify_quality(item, (item.sell_in < rule.sell_in.closer) ? 1 : 0);
+    if (item.sell_in < rule.sell_in.over) {
+      item.quality = rule.quality.min;
     }
   }
   else {
     modify_quality(item, -1);
-  }
-
-  if (item.sell_in < rule.sell_in.over) {
-    if (item.name === rule.type.Aging) {
-      modify_quality(item, 1);
-    }
-    else {
-      if (item.name === rule.type.Event) {
-        item.quality = rule.quality.min;
-      }
-      else {
-        modify_quality(item, -1);
-      }
-    }
   }
 }
