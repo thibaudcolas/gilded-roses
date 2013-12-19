@@ -4,7 +4,7 @@ function Item(name, sell_in, quality) {
   this.quality = quality;
 }
 
-var items = []
+var items = [];
 
 items.push(new Item('+5 Dexterity Vest', 10, 20));
 items.push(new Item('Aged Brie', 2, 0));
@@ -38,13 +38,23 @@ var rule = {
 };
 
 /*
+ * Updates val to never be out of bounds.
+ */
+Math.clamp = function (min, val, max) {
+  return Math.max(Math.min(val, max), min);
+};
+
+/*
  * Updates the quality of item with val, and checks for min and max values when doing so.
- * rule.quality.min <= item.quality + val <= rule.quality.max
  */
 function modify_quality(item, val) {
   // The modifying value is doubled if the sell_in date has passed.
   val *= (item.sell_in < rule.sell_in.over) ? 2 : 1;
-  item.quality = Math.max(Math.min(item.quality + val, rule.quality.max), rule.quality.min);
+  // The modifying value is updated one by one (to follow the previous implementation).
+  var inc = (val > 0) ? 1 : -1;
+  for (var i = 0; i < Math.abs(val); i++) {
+    item.quality = Math.clamp(rule.quality.min, item.quality + inc, rule.quality.max);
+  }
 }
 
 
@@ -67,8 +77,7 @@ function update_item(item) {
 
     case rule.type.Conjured:
       // Conjured items degrade twice as fast.
-      modify_quality(item, -1);
-      modify_quality(item, -1);
+      modify_quality(item, -2);
       break;
 
     case rule.type.Event:
