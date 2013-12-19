@@ -50,11 +50,7 @@ Math.clamp = function (min, val, max) {
 function modify_quality(item, val) {
   // The modifying value is doubled if the sell_in date has passed.
   val *= (item.sell_in < rule.sell_in.over) ? 2 : 1;
-  // The modifying value is updated one by one (to follow the previous implementation).
-  var inc = (val > 0) ? 1 : -1;
-  for (var i = 0; i < Math.abs(val); i++) {
-    item.quality = Math.clamp(rule.quality.min, item.quality + inc, rule.quality.max);
-  }
+  item.quality = Math.clamp(rule.quality.min, item.quality + val, rule.quality.max);
 }
 
 
@@ -77,7 +73,8 @@ function update_item(item) {
 
     case rule.type.Conjured:
       // Conjured items degrade twice as fast.
-      modify_quality(item, -2);
+      modify_quality(item, -1);
+      modify_quality(item, -1);
       break;
 
     case rule.type.Event:
