@@ -1,10 +1,14 @@
 describe("Gilded Rose", function() {
 
   describe("API", function () {
+
+    // However, do not alter the Item class or Items property as those belong to the goblin
     it("has an Item constructor", function() {
       expect(typeof Item).toBe('function');
     });
 
+    // - All items have a SellIn value which denotes the number of days we have to sell the item
+    // - All items have a Quality value which denotes how valuable the item is
     it("gives three properties to each item", function() {
       var testItem = new Item('name', 10, 10);
       expect(testItem.name).toBe('name');
@@ -64,32 +68,19 @@ describe("Gilded Rose", function() {
       }
     });
 
+    // - At the end of each day our system lowers both values for every item
     it("lowers sell_in value each day", function () {
       var sell_in = items[0].sell_in;
       update_quality();
       expect(items[0].sell_in).toBeLessThan(sell_in);
     });
 
+    // - At the end of each day our system lowers both values for every item
     it("lowers quality value each day", function () {
       var quality = items[0].quality;
       update_quality();
       expect(items[0].quality).toBeLessThan(quality);
     });
-
-    it("can have a smaller sell_in than 0", function () {
-      for (var i = 0; i < items[0].sell_in + 10; i++) {
-        update_quality();
-      }
-      expect(items[0].sell_in).toBeLessThan(0);
-    });
-
-    it("cannot have a smaller quality than 0", function () {
-      for (var i = 0; i < items[0].quality + 10; i++) {
-        update_quality();
-      }
-      expect(items[0].quality).toEqual(0);
-    });
-
   });
 
   describe("special cases", function () {
@@ -106,8 +97,34 @@ describe("Gilded Rose", function() {
       items = testItems;
     });
 
-    it("degrades its quality twice as fast when sell_in is below 0", function () {
+    it("can have a smaller sell_in than 0", function () {
+      for (var i = 0; i < items[0].sell_in + 20; i++) {
+        update_quality();
+      }
+      expect(items[0].sell_in).toBeLessThan(0);
+    });
 
+    // - The Quality of an item is never negative
+    it("cannot have a smaller quality than 0", function () {
+      for (var i = 0; i < items[0].quality + 10; i++) {
+        update_quality();
+      }
+      expect(items[0].quality).toEqual(0);
+    });
+
+    // - Once the sell by date has passed, Quality degrades twice as fast
+    it("degrades its quality twice as fast when sell_in is below 0", function () {
+      items.push(new Item('low quality test', 0, 10));
+      update_quality();
+      expect(items[items.length - 1].quality).toEqual(8);
+    });
+
+    // an item can never have its Quality increase above 50
+    it("cannot have a quality greater than 50", function () {
+      for (var i = 0; i < 100; i++) {
+        update_quality();
+      }
+      expect(items[1].quality).toEqual(50);
     });
   });
 
