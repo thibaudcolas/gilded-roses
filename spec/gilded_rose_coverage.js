@@ -197,11 +197,38 @@ describe("Gilded Rose", function() {
         update_quality();
         expect(items[4].quality).toEqual(quality + 2);
       }
-
     });
 
 
-    // and by 3 when there are 5 days or less but Quality drops to 0 after the concert
+    // and by 3 when there are 5 days or less
+    it("increases even faster (by 3) when the concert approaches", function () {
+      var quality = 0;
+
+      expect(items[4].name).toMatch('^Backstage*');
+
+      for (var i = 0; i < 10; i++) {
+        update_quality();
+      }
+
+      for (var i = 0; i < 5; i++) {
+        quality = items[4].quality;
+        update_quality();
+        expect(items[4].quality).toEqual(quality + 3);
+      }
+    });
+
+    // but Quality drops to 0 after the concert
+    it("drops to 0 when the concert is over", function () {
+      var quality = 0;
+
+      expect(items[4].name).toMatch('^Backstage*');
+
+      for (var i = 0; i < 16; i++) {
+        update_quality();
+      }
+
+      expect(items[4].quality).toEqual(0);
+    });
   });
 
 });
