@@ -41,7 +41,7 @@ var rule = {
  * rule.quality.min <= item.quality + val <= rule.quality.max
  */
 function modify_quality(item, val) {
-  // the modifying value is doubled if we missed the sell_in date.
+  // The modifying value is doubled if the sell_in date has passed.
   val *= (item.sell_in < rule.sell_in.over) ? 2 : 1;
   item.quality = Math.max(Math.min(item.quality + val, rule.quality.max), rule.quality.min);
 }
@@ -58,19 +58,25 @@ function update_item(item) {
 
   item.sell_in--;
 
-  if (item.name === rule.type.Aging) {
-    modify_quality(item, 1);
-  }
-  else if (item.name === rule.type.Event) {
-    // Executes the same operation multiple times if sell_in is close / closer.
-    modify_quality(item, 1);
-    modify_quality(item, (item.sell_in < rule.sell_in.close) ? 1 : 0);
-    modify_quality(item, (item.sell_in < rule.sell_in.closer) ? 1 : 0);
-    if (item.sell_in < rule.sell_in.over) {
-      item.quality = rule.quality.min;
-    }
-  }
-  else {
-    modify_quality(item, -1);
+  switch (item.name) {
+    case rule.type.Aging:
+      // Aged Brie gains quality over time.
+      modify_quality(item, 1);
+      break;
+
+    case rule.type.Event:
+      // Executes the same operation multiple times if sell_in is close / closer.
+      modify_quality(item, 1);
+      modify_quality(item, (item.sell_in < rule.sell_in.close) ? 1 : 0);
+      modify_quality(item, (item.sell_in < rule.sell_in.closer) ? 1 : 0);
+      if (item.sell_in < rule.sell_in.over) {
+        item.quality = rule.quality.min;
+      }
+      break;
+
+    default:
+      // All items lose quality over time.
+      modify_quality(item, -1);
+      break;
   }
 }
