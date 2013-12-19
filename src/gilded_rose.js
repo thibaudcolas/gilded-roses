@@ -13,6 +13,7 @@ items.push(new Item('Sulfuras, Hand of Ragnaros', 0, 80));
 items.push(new Item('Backstage passes to a TAFKAL80ETC concert', 15, 20));
 items.push(new Item('Conjured Mana Cake', 3, 6));
 
+// Simply runs update_item on all elements of the items array.
 function update_quality() {
   items.map(update_item);
 }
@@ -36,50 +37,52 @@ var rule = {
 };
 
 /*
+ * Updates the quality of item with val, and checks for min and max values when doing so.
+ */
+function modify_quality(item, val) {
+  // rule.quality.min <= item.quality + val <= rule.quality.max
+  item.quality = Math.max(Math.min(item.quality + val, rule.quality.max), rule.quality.min);
+}
+
+
+/*
  * Updates one item.
  */
 function update_item(item) {
+  // Gets rid of Sulfuras as soon as possible.
   if (item.name === rule.type.Legendary) {
     return;
   }
 
-  if (item.name !== rule.type.Aging && item.name !== rule.type.Event) {
-    if (item.quality > rule.quality.min) {
-      item.quality--;
-    }
-  }
-  else {
+  item.sell_in--;
+
+  if (item.name === rule.type.Aging || item.name === rule.type.Event) {
     if (item.quality < rule.quality.max) {
       item.quality++;
       if (item.name == rule.type.Event) {
-        if (item.sell_in <= rule.sell_in.close) {
-          if (item.quality < rule.quality.max) {
-            item.quality++;
-          }
+        if (item.sell_in < rule.sell_in.close) {
+          modify_quality(item, 1);
         }
-        if (item.sell_in <= rule.sell_in.closer) {
-          if (item.quality < rule.quality.max) {
-            item.quality++;
-          }
+        if (item.sell_in < rule.sell_in.closer) {
+          modify_quality(item, 1);
         }
       }
     }
   }
-
-  item.sell_in--;
+  else {
+    modify_quality(item, -1);
+  }
 
   if (item.sell_in < rule.sell_in.over) {
-    if (item.name !== rule.type.Aging) {
-      if (item.name !== rule.type.Event) {
-        if (item.quality > rule.quality.min) {
-          item.quality--;
-        }
-      } else {
+    if (item.name === rule.type.Aging) {
+      modify_quality(item, 1);
+    }
+    else {
+      if (item.name === rule.type.Event) {
         item.quality = rule.quality.min;
       }
-    } else {
-      if (item.quality < rule.quality.max) {
-        item.quality++;
+      else {
+        modify_quality(item, -1);
       }
     }
   }
