@@ -58,14 +58,15 @@ function modify_quality(item, val) {
  * Updates one item.
  */
 function update_item(item) {
-  // Gets rid of Sulfuras as soon as possible.
-  if (item.name === rule.type.Legendary) {
-    return;
-  }
-
+  // sell_in is always reduced.
   item.sell_in--;
 
   switch (item.name) {
+    case rule.type.Legendary:
+      // Sulfuras should never be sold.
+      item.sell_in = rule.sell_in.over;
+      break;
+
     case rule.type.Aging:
       // Aged Brie gains quality over time.
       modify_quality(item, 1);
