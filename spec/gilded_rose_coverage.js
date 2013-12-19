@@ -34,7 +34,7 @@ describe("Gilded Rose", function() {
     });
   });
 
-  describe("value update", function () {
+  describe("general value update", function () {
     var testItems = [
       new Item('Test item', 10, 20),
       new Item('Test item 2', 2, 30),
@@ -90,6 +90,25 @@ describe("Gilded Rose", function() {
       expect(items[0].quality).toEqual(0);
     });
 
+  });
+
+  describe("special cases", function () {
+    var testItems = [
+      new Item('+5 Dexterity Vest', 10, 20),
+      new Item('Aged Brie', 2, 0),
+      new Item('Elixir of the Mongoose', 5, 7),
+      new Item('Sulfuras, Hand of Ragnaros', 0, 80),
+      new Item('Backstage passes to a TAFKAL80ETC concert', 15, 20),
+      new Item('Conjured Mana Cake', 3, 6)
+    ];
+
+    beforeEach(function () {
+      items = testItems;
+    });
+
+    it("degrades its quality twice as fast when sell_in is below 0", function () {
+
+    });
   });
 
 });
