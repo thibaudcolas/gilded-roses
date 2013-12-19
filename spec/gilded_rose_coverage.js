@@ -31,7 +31,13 @@ describe("Gilded Rose", function() {
     var testItems = [
       new Item('Test item', 10, 20),
       new Item('Test item 2', 2, 30),
-      new Item('Test item 3', 5, 7)
+      new Item('Test item 3', 5, 7),
+      new Item('+5 Dexterity Vest', 10, 20),
+      new Item('Aged Brie', 2, 0),
+      new Item('Elixir of the Mongoose', 5, 7),
+      new Item('Sulfuras, Hand of Ragnaros', 0, 80),
+      new Item('Backstage passes to a TAFKAL80ETC concert', 15, 20),
+      new Item('Conjured Mana Cake', 3, 6)
     ];
 
     // Reset global array before each test case.
