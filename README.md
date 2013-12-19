@@ -18,3 +18,9 @@ Uses the [Jasmine](http://pivotal.github.io/jasmine/) test framework.
     livereloadx .
     echo "http://localhost:1337/SpecRunner.html"
 ```
+
+## Running code coverage
+
+```
+    node_modules/.bin/karma start karma.js
+``
