@@ -38,33 +38,36 @@ describe("Gilded Rose", function() {
     });
   });
 
-  describe("general value update", function () {
-    var testItems = [
-      new Item('Test item', 10, 20),
-      new Item('Test item 2', 2, 30),
-      new Item('Test item 3', 5, 7),
-      new Item('+5 Dexterity Vest', 10, 20),
-      new Item('Aged Brie', 2, 0),
-      new Item('Elixir of the Mongoose', 5, 7),
-      new Item('Sulfuras, Hand of Ragnaros', 0, 80),
-      new Item('Backstage passes to a TAFKAL80ETC concert', 15, 20),
-      new Item('Conjured Mana Cake', 3, 6)
-    ];
+  describe("value update", function () {
 
     // Reset global array before each test case.
     beforeEach(function () {
-      items = testItems;
+      items = [
+        new Item('Test item', 10, 20),
+        new Item('Test item 2', 2, 30),
+        new Item('Test item 3', 5, 7),
+        new Item('+5 Dexterity Vest', 10, 20),
+        new Item('Aged Brie', 2, 0),
+        new Item('Elixir of the Mongoose', 5, 7),
+        new Item('Sulfuras, Hand of Ragnaros', 0, 80),
+        new Item('Backstage passes to a TAFKAL80ETC concert', 15, 20),
+        new Item('Conjured Mana Cake', 3, 6)
+      ];
     });
 
     it("never adds or removes items", function () {
+      var length = items.length;
       update_quality();
-      expect(items.length).toEqual(testItems.length);
+      expect(items.length).toEqual(length);
     });
 
     it("never alters item names", function () {
+      var names = items.map(function (e) {
+        return e.name;
+      });
       update_quality();
       for (var i = 0; i < items.length; i++) {
-        expect(items[i].name).toEqual(testItems[i].name);
+        expect(items[i].name).toEqual(names[i]);
       }
     });
 
@@ -83,18 +86,17 @@ describe("Gilded Rose", function() {
     });
   });
 
-  describe("special cases", function () {
-    var testItems = [
-      new Item('+5 Dexterity Vest', 10, 20),
-      new Item('Aged Brie', 2, 0),
-      new Item('Elixir of the Mongoose', 5, 7),
-      new Item('Sulfuras, Hand of Ragnaros', 0, 80),
-      new Item('Backstage passes to a TAFKAL80ETC concert', 15, 20),
-      new Item('Conjured Mana Cake', 3, 6)
-    ];
+  describe("common cases", function () {
 
     beforeEach(function () {
-      items = testItems;
+      items = [
+        new Item('+5 Dexterity Vest', 10, 20),
+        new Item('Aged Brie', 2, 0),
+        new Item('Elixir of the Mongoose', 5, 7),
+        new Item('Sulfuras, Hand of Ragnaros', 0, 80),
+        new Item('Backstage passes to a TAFKAL80ETC concert', 15, 20),
+        new Item('Conjured Mana Cake', 3, 6)
+      ];
     });
 
     it("can have a smaller sell_in than 0", function () {
@@ -106,7 +108,7 @@ describe("Gilded Rose", function() {
 
     // - The Quality of an item is never negative
     it("cannot have a smaller quality than 0", function () {
-      for (var i = 0; i < items[0].quality + 10; i++) {
+      for (var i = 0; i < items[0].quality + 20; i++) {
         update_quality();
       }
       expect(items[0].quality).toEqual(0);
@@ -119,13 +121,67 @@ describe("Gilded Rose", function() {
       expect(items[items.length - 1].quality).toEqual(8);
     });
 
-    // an item can never have its Quality increase above 50
+    // - The Quality of an item is never more than 50
     it("cannot have a quality greater than 50", function () {
       for (var i = 0; i < 100; i++) {
         update_quality();
       }
       expect(items[1].quality).toEqual(50);
     });
+  });
+
+  describe("special cases", function () {
+
+    beforeEach(function () {
+      items = [
+        new Item('+5 Dexterity Vest', 10, 20),
+        new Item('Aged Brie', 2, 0),
+        new Item('Elixir of the Mongoose', 5, 7),
+        new Item('Sulfuras, Hand of Ragnaros', 0, 80),
+        new Item('Backstage passes to a TAFKAL80ETC concert', 15, 20),
+        new Item('Conjured Mana Cake', 3, 6)
+      ];
+    });
+
+    // - "Aged Brie" actually increases in Quality the older it gets
+    it("increases quality for Aged Brie", function () {
+      var quality = 0;
+
+      expect(items[1].name).toMatch('^Aged*');
+
+      for (var i = 0; i < 20; i++) {
+        quality = items[1].quality;
+        update_quality();
+        expect(items[1].quality).toBeGreaterThan(quality);
+      }
+    });
+
+    // - "Sulfuras", being a legendary item, never has to be sold or decreases in Quality
+    it("does not update quality for Sulfuras", function () {
+      var quality = 0;
+
+      expect(items[3].name).toMatch('^Sulfuras*');
+
+      for (var i = 0; i < 20; i++) {
+        quality = items[3].quality;
+        update_quality();
+        expect(items[3].quality).toEqual(quality);
+      }
+    });
+
+    // - "Backstage passes", like aged brie, increases in Quality as it's SellIn value approaches;
+    it("increases quality for Backstage passes", function () {
+      var quality = 0;
+      expect(items[4].name).toMatch('^Backstage*');
+      console.dir(items[4]);
+      for (var i = 0; i < 3; i++) {
+        quality = items[4].quality;
+        update_quality();
+        expect(items[4].quality).toBeGreaterThan(quality);
+      }
+    });
+
+    //  Quality increases by 2 when there are 10 days or less and by 3 when there are 5 days or less but Quality drops to 0 after the concert
   });
 
 });
