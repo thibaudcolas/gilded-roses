@@ -23,4 +23,4 @@ Uses the [Jasmine](http://pivotal.github.io/jasmine/) test framework.
 
 ```
     node_modules/.bin/karma start karma.js
-``
+```
