@@ -13,6 +13,7 @@ Uses the [Jasmine](http://pivotal.github.io/jasmine/) test framework.
  
 ```
     git clone https://github.com/ThibWeb/gilded-roses.git
+    cd gilded-roses/
     npm install -g livereloadx
     server
     livereloadx .
