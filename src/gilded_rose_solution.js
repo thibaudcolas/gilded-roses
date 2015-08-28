@@ -1,10 +1,10 @@
 function Item(name, sell_in, quality) {
-  this.name = name;
-  this.sell_in = sell_in;
-  this.quality = quality;
+    this.name = name;
+    this.sell_in = sell_in;
+    this.quality = quality;
 }
 
-var items = [];
+const items = [];
 
 items.push(new Item('+5 Dexterity Vest', 10, 20));
 items.push(new Item('Aged Brie', 2, 0));
@@ -15,34 +15,32 @@ items.push(new Item('Conjured Mana Cake', 3, 6));
 
 // Simply runs update_item on all elements of the items array.
 function update_quality(items) {
-  items.map(update_item);
+    items.map(update_item);
 }
 
 // Contains all values used to enforce business rules.
-var rule = {
-  type: {
-    Aging: 'Aged Brie',
-    Legendary: 'Sulfuras, Hand of Ragnaros',
-    Event: 'Backstage passes to a TAFKAL80ETC concert',
-    Conjured: 'Conjured Mana Cake'
-  },
-  quality: {
-    max: 50,
-    min: 0
-  },
-  sell_in: {
-    close: 10,
-    closer: 5,
-    over: 0
-  }
+const rule = {
+    type: {
+        Aging: 'Aged Brie',
+        Legendary: 'Sulfuras, Hand of Ragnaros',
+        Event: 'Backstage passes to a TAFKAL80ETC concert',
+        Conjured: 'Conjured Mana Cake'
+    },
+    quality: {
+        max: 50,
+        min: 0
+    },
+    sell_in: {
+        close: 10,
+        closer: 5,
+        over: 0
+    },
 };
 
 /*
  * Updates val to never be out of bounds.
  */
-Math.clamp = function (min, val, max) {
-  return Math.max(Math.min(val, max), min);
-};
+Math.clamp = (min, val, max) => Math.max(Math.min(val, max), min);
 
 /*
  * Updates the quality of item with val, and checks for min and max values when doing so.
@@ -95,7 +93,7 @@ function update_item(item) {
   }
 }
 
-module.exports = {
+export default {
     Item: Item,
     initialItems: items,
     update_quality: update_quality,
