@@ -16,9 +16,9 @@ describe('Gilded Rose', function() {
         foo = 0;
     });
 
-      it('should do something', function() {
+    it('should do something', function() {
 
-      });
+    });
 
     it('is a syntax example', function() {
         expect(true).to.be.true;
