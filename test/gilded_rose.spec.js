@@ -34,10 +34,10 @@ describe('Gilded Rose', function() {
         });
 
         it('has mathematical comparisons', function() {
-            expect(2).toBeLessThan(3);
-            expect(3).not.toBeLessThan(2);
-            expect(3).toBeGreaterThan(2);
-            expect(2).not.toBeGreaterThan(3);
+            expect(2).to.be.lessThan(3);
+            expect(3).not.to.be.lessThan(2);
+            expect(3).to.be.greaterThan(2);
+            expect(2).not.to.be.greaterThan(3);
         });
     });
 

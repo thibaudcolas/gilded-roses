@@ -26,6 +26,7 @@ npm install -g eslint eslint-config-airbnb eslint-plugin-react babel-eslint
 npm start
 # Run the coverage
 npm run coverage
+open coverage/lcov-report/index.html
 # Run the linting
 npm run lint
 ```
