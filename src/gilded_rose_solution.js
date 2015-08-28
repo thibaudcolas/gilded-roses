@@ -46,9 +46,9 @@ Math.clamp = (min, val, max) => Math.max(Math.min(val, max), min);
  * Updates the quality of item with val, and checks for min and max values when doing so.
  */
 function modify_quality(item, val) {
-  // The modifying value is doubled if the sell_in date has passed.
-  val *= (item.sell_in < rule.sell_in.over) ? 2 : 1;
-  item.quality = Math.clamp(rule.quality.min, item.quality + val, rule.quality.max);
+    // The modifying value is doubled if the sell_in date has passed.
+    val *= (item.sell_in < rule.sell_in.over) ? 2 : 1;
+    item.quality = Math.clamp(rule.quality.min, item.quality + val, rule.quality.max);
 }
 
 
@@ -56,40 +56,40 @@ function modify_quality(item, val) {
  * Updates one item.
  */
 function update_item(item) {
-  // sell_in is always reduced.
-  item.sell_in--;
+    // sell_in is always reduced.
+    item.sell_in--;
 
-  switch (item.name) {
+    switch (item.name) {
     case rule.type.Legendary:
-      // Sulfuras should never be sold.
-      item.sell_in = rule.sell_in.over;
-      break;
+        // Sulfuras should never be sold.
+        item.sell_in = rule.sell_in.over;
+        break;
 
     case rule.type.Aging:
-      // Aged Brie gains quality over time.
-      modify_quality(item, 1);
-      break;
+        // Aged Brie gains quality over time.
+        modify_quality(item, 1);
+        break;
 
     case rule.type.Conjured:
-      // Conjured items degrade twice as fast.
-      modify_quality(item, -1);
-      modify_quality(item, -1);
-      break;
+        // Conjured items degrade twice as fast.
+        modify_quality(item, -1);
+        modify_quality(item, -1);
+        break;
 
     case rule.type.Event:
-      // Executes the same operation multiple times if sell_in is close / closer.
-      modify_quality(item, 1);
-      modify_quality(item, (item.sell_in < rule.sell_in.close) ? 1 : 0);
-      modify_quality(item, (item.sell_in < rule.sell_in.closer) ? 1 : 0);
-      if (item.sell_in < rule.sell_in.over) {
-        item.quality = rule.quality.min;
-      }
-      break;
+        // Executes the same operation multiple times if sell_in is close / closer.
+        modify_quality(item, 1);
+        modify_quality(item, (item.sell_in < rule.sell_in.close) ? 1 : 0);
+        modify_quality(item, (item.sell_in < rule.sell_in.closer) ? 1 : 0);
+        if (item.sell_in < rule.sell_in.over) {
+            item.quality = rule.quality.min;
+        }
+        break;
 
     default:
-      // All items lose quality over time.
-      modify_quality(item, -1);
-      break;
+        // All items lose quality over time.
+        modify_quality(item, -1);
+        break;
   }
 }
 

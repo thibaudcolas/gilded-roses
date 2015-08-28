@@ -16,6 +16,11 @@ Testing stack taken from http://onsen.io/blog/mocha-chaijs-unit-test-coverage-es
 git clone https://github.com/ThibWeb/gilded-roses.git
 cd gilded-roses/
 npm install
+```
+
+## Doing the kata
+
+```sh
 # Run the tests with a watcher
 npm start
 # Run the coverage
