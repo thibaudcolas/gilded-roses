@@ -1,27 +1,23 @@
-gilded-roses
+gilded-roses [![Build Status](https://travis-ci.org/ThibWeb/gilded-roses.png?branch=master)](https://travis-ci.org/ThibWeb/gilded-roses)
 ============
 
 > A refactoring kata, originally from [Emily Bache](https://github.com/emilybache/Refactoring-Katas), to execute during a [Coding Dojo](http://codingdojo.org/).
 
-[![Build Status](https://travis-ci.org/ThibWeb/gilded-roses.png?branch=master)](https://travis-ci.org/ThibWeb/gilded-roses)
+Testing stack taken from http://onsen.io/blog/mocha-chaijs-unit-test-coverage-es6/:
 
-[![Code Climate](https://codeclimate.com/github/ThibWeb/gilded-roses.png)](https://codeclimate.com/github/ThibWeb/gilded-roses)
-
-Uses the [Jasmine](http://pivotal.github.io/jasmine/) test framework.
+- [Mochajs](https://mochajs.org/)
+- [Chai](http://chaijs.com/)
+- [Isparta](https://github.com/douglasduteil/isparta)
+- [Babel](https://babeljs.io/)
 
 ## Setup
- 
-```
-    git clone https://github.com/ThibWeb/gilded-roses.git
-    cd gilded-roses/
-    npm install -g livereloadx
-    server
-    livereloadx .
-    echo "http://localhost:1337/SpecRunner.html"
-```
 
-## Running code coverage
-
-```
-    node_modules/.bin/karma start karma.js
+```sh
+git clone https://github.com/ThibWeb/gilded-roses.git
+cd gilded-roses/
+npm install
+# Run the tests with a watcher
+npm start
+# Run the coverage
+npm run coverage
 ```

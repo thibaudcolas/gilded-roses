@@ -2,9 +2,13 @@
   "name": "gilded-roses",
   "version": "1.0.0",
   "description": "A refactoring kata in ES6 JavaScript",
-  "main": "src/gilded_rose.js",
+  "main": "test/gilded_rose.spec.js",
   "scripts": {
-    "test": "mocha --compilers js:babel/register"
+    "start": "npm run unittest:watch",
+    "test": "npm run unittest",
+    "unittest": "mocha --compilers js:babel/register",
+    "unittest:watch": "mocha --compilers js:babel/register --watch",
+    "coverage": "babel-node ./node_modules/.bin/isparta cover ./node_modules/.bin/_mocha"
   },
   "repository": {
     "type": "git",
@@ -17,6 +21,7 @@
     "javascript",
     "jasmine",
     "istanbul",
+    "isparta",
     "mocha",
     "chai",
     "es6",
@@ -32,6 +37,7 @@
   "devDependencies": {
     "babel": "^5.8.23",
     "chai": "^3.2.0",
+    "isparta": "^3.0.4",
     "mocha": "^2.3.0"
   }
 }
