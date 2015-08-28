@@ -62,7 +62,7 @@ function update_quality(items) {
 }
 
 module.exports = {
-    Item: Item,
-    items: items,
-    update_quality: update_quality,
+  Item: Item,
+  items: items,
+  update_quality: update_quality,
 };

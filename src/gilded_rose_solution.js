@@ -24,16 +24,16 @@ const rule = {
         Aging: 'Aged Brie',
         Legendary: 'Sulfuras, Hand of Ragnaros',
         Event: 'Backstage passes to a TAFKAL80ETC concert',
-        Conjured: 'Conjured Mana Cake'
+        Conjured: 'Conjured Mana Cake',
     },
     quality: {
         max: 50,
-        min: 0
+        min: 0,
     },
     sell_in: {
         close: 10,
         closer: 5,
-        over: 0
+        over: 0,
     },
 };
 
@@ -90,7 +90,7 @@ function update_item(item) {
         // All items lose quality over time.
         modify_quality(item, -1);
         break;
-  }
+    }
 }
 
 export default {

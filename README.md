@@ -16,6 +16,7 @@ Testing stack taken from http://onsen.io/blog/mocha-chaijs-unit-test-coverage-es
 git clone https://github.com/ThibWeb/gilded-roses.git
 cd gilded-roses/
 npm install
+npm install -g eslint eslint-config-airbnb eslint-plugin-react babel-eslint
 ```
 
 ## Doing the kata
@@ -25,4 +26,6 @@ npm install
 npm start
 # Run the coverage
 npm run coverage
+# Run the linting
+npm run lint
 ```

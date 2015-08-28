@@ -8,7 +8,8 @@
     "test": "npm run unittest",
     "unittest": "mocha --compilers js:babel/register",
     "unittest:watch": "mocha --compilers js:babel/register --watch",
-    "coverage": "babel-node ./node_modules/.bin/isparta cover ./node_modules/.bin/_mocha"
+    "coverage": "babel-node ./node_modules/.bin/isparta cover ./node_modules/.bin/_mocha",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -36,10 +37,16 @@
   },
   "devDependencies": {
     "babel": "^5.8.23",
+    "babel-eslint": "^4.1.1",
     "chai": "^3.2.0",
     "eslint": "^1.3.1",
     "eslint-config-airbnb": "0.0.8",
+    "eslint-plugin-react": "^3.3.0",
     "isparta": "^3.0.4",
     "mocha": "^2.3.0"
+  },
+  "dependencies": {
+    "eslint": "^1.3.1",
+    "eslint-config-airbnb": "0.0.8"
   }
 }
