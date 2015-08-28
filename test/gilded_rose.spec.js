@@ -1,3 +1,10 @@
+var expect = require('chai').expect;
+var rose = require('../src/gilded_rose');
+
+var Item = rose.Item;
+var items = rose.items;
+var update_quality = rose.update_quality;
+
 describe("Gilded Rose", function() {
   // var foo;
 

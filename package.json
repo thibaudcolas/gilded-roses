@@ -1,10 +1,10 @@
 {
   "name": "gilded-roses",
-  "version": "0.0.0",
-  "description": "A refactoring kata in JS",
-  "main": "SpecRunner.html",
+  "version": "1.0.0",
+  "description": "A refactoring kata in ES6 JavaScript",
+  "main": "src/gilded_rose.js",
   "scripts": {
-    "test": "node_modules/.bin/karma start karma-travis.js"
+    "test": "mocha --compilers js:babel/register"
   },
   "repository": {
     "type": "git",
@@ -17,15 +17,21 @@
     "javascript",
     "jasmine",
     "istanbul",
+    "mocha",
+    "chai",
+    "es6",
+    "es2015",
+    "babel",
     "tdd"
   ],
-  "author": "ThibWeb",
-  "license": "BSD-2-Clause",
+  "author": "Thibaud Colas",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ThibWeb/gilded-roses/issues"
   },
   "devDependencies": {
-    "karma": "~0.10.2",
-    "karma-coverage": "~0.1.0"
+    "babel": "^5.8.23",
+    "chai": "^3.2.0",
+    "mocha": "^2.3.0"
   }
 }

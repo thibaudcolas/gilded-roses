@@ -14,7 +14,7 @@ items.push(new Item('Backstage passes to a TAFKAL80ETC concert', 15, 20));
 items.push(new Item('Conjured Mana Cake', 3, 6));
 
 // Simply runs update_item on all elements of the items array.
-function update_quality() {
+function update_quality(items) {
   items.map(update_item);
 }
 
@@ -94,3 +94,9 @@ function update_item(item) {
       break;
   }
 }
+
+module.exports = {
+    Item: Item,
+    items: items,
+    update_quality: update_quality,
+};
