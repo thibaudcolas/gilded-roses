@@ -97,6 +97,6 @@ function update_item(item) {
 
 module.exports = {
     Item: Item,
-    items: items,
+    initialItems: items,
     update_quality: update_quality,
 };
