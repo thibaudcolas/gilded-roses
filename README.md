@@ -1,7 +1,7 @@
 gilded-roses
 ============
 
-[![Build Status](https://img.shields.io/travis/ThibWeb/gilded-roses.svg?style=flat-square)](https://travis-ci.org/ThibWeb/gilded-roses) [![devDependency Status](https://img.shields.io/david/dev/ThibWeb/gilded-roses.svg?style=flat-square)](https://david-dm.org/ThibWeb/gilded-roses) [![Code Climate](https://img.shields.io/codeclimate/github/ThibWeb/gilded-roses.svg?style=flat-square)](https://codeclimate.com/github/ThibWeb/gilded-roses)
+[![Build Status](https://img.shields.io/travis/ThibWeb/gilded-roses.svg?style=flat-square)](https://travis-ci.org/ThibWeb/gilded-roses) [![devDependency Status](https://img.shields.io/david/dev/ThibWeb/gilded-roses.svg?style=flat-square)](https://david-dm.org/ThibWeb/gilded-roses) [![Code Climate](https://img.shields.io/codeclimate/github/ThibWeb/gilded-roses.svg?style=flat-square)](https://codeclimate.com/github/ThibWeb/gilded-roses) [![Coverage](https://img.shields.io/codeclimate/coverage/github/ThibWeb/gilded-roses.svg?style=flat-square)](https://codeclimate.com/github/ThibWeb/gilded-roses/coverage)
 
 
 > A refactoring kata, originally from [Emily Bache](https://github.com/emilybache/Refactoring-Katas), to execute during a [Coding Dojo](http://codingdojo.org/).
