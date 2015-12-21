@@ -18,6 +18,7 @@ Testing stack taken from http://onsen.io/blog/mocha-chaijs-unit-test-coverage-es
 ```sh
 git clone https://github.com/ThibWeb/gilded-roses.git
 cd gilded-roses/
+nvm install
 npm install
 npm install -g eslint eslint-config-airbnb eslint-plugin-react babel-eslint
 ```
