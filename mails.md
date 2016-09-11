@@ -58,7 +58,7 @@
  
 > Si vous souhaitez poursuivre l’exercice, voici :
 > -          La version originale du kata, avec plein d’autres langages pour ceux qui voudraient jeter un œil : https://github.com/emilybache/GildedRose-Refactoring-Kata
-> -          Ma version : https://github.com/ThibWeb/gilded-roses. Le code est identique à l’original, j’y ai simplement ajouté ma solution (WIP), la version française des specs, des informations pour la mise en place de l’exercice et des outils d’infrastructure dont nous n’avons pas eu le temps de parler. Sont également présentes sur d’autres branches les solutions que j’ai trouvé en ligne.
+> -          Ma version : https://github.com/thibaudcolas/gilded-roses. Le code est identique à l’original, j’y ai simplement ajouté ma solution (WIP), la version française des specs, des informations pour la mise en place de l’exercice et des outils d’infrastructure dont nous n’avons pas eu le temps de parler. Sont également présentes sur d’autres branches les solutions que j’ai trouvé en ligne.
  
 > Ce soir, j’ajouterai notre code de ce midi sur le dépôt afin que vous puissiez en repartir si le cœur vous en dit.
  

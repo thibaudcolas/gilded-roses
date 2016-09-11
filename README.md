@@ -1,7 +1,7 @@
 gilded-roses
 ============
 
-[![Build Status](https://img.shields.io/travis/ThibWeb/gilded-roses.svg?style=flat-square)](https://travis-ci.org/ThibWeb/gilded-roses) [![devDependency Status](https://img.shields.io/david/dev/ThibWeb/gilded-roses.svg?style=flat-square)](https://david-dm.org/ThibWeb/gilded-roses) [![Code Climate](https://img.shields.io/codeclimate/github/ThibWeb/gilded-roses.svg?style=flat-square)](https://codeclimate.com/github/ThibWeb/gilded-roses) [![Coverage](https://img.shields.io/codeclimate/coverage/github/ThibWeb/gilded-roses.svg?style=flat-square)](https://codeclimate.com/github/ThibWeb/gilded-roses/coverage)
+[![Build Status](https://img.shields.io/travis/thibaudcolas/gilded-roses.svg?style=flat-square)](https://travis-ci.org/thibaudcolas/gilded-roses) [![devDependency Status](https://img.shields.io/david/dev/thibaudcolas/gilded-roses.svg?style=flat-square)](https://david-dm.org/thibaudcolas/gilded-roses) [![Code Climate](https://img.shields.io/codeclimate/github/thibaudcolas/gilded-roses.svg?style=flat-square)](https://codeclimate.com/github/thibaudcolas/gilded-roses) [![Coverage](https://img.shields.io/codeclimate/coverage/github/thibaudcolas/gilded-roses.svg?style=flat-square)](https://codeclimate.com/github/thibaudcolas/gilded-roses/coverage)
 
 
 > A refactoring kata, originally from [Emily Bache](https://github.com/emilybache/Refactoring-Katas), to execute during a [Coding Dojo](http://codingdojo.org/).
@@ -16,7 +16,7 @@ Testing stack taken from http://onsen.io/blog/mocha-chaijs-unit-test-coverage-es
 ## Setup
 
 ```sh
-git clone https://github.com/ThibWeb/gilded-roses.git
+git clone https://github.com/thibaudcolas/gilded-roses.git
 cd gilded-roses/
 nvm install
 npm install
